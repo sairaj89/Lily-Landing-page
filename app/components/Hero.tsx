@@ -8,7 +8,6 @@ export default function Hero() {
 
         <div className={styles.left}>
 
-          {/* --- Kicker Row (Red Line + Welcome Text) --- */}
           <div className={styles.kickerRow}>
             <span className={styles.kickerBar} aria-hidden="true"></span>
             <span className={styles.intro}>Welcome to the</span>

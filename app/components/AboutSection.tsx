@@ -5,10 +5,9 @@ export default function AboutSection() {
     <section className={styles.wrapper} aria-labelledby="about-heading">
       <div className={styles.inner}>
 
-        {/* 3x2 GRID */}
+        
         <div className={styles.grid3x2}>
 
-          {/* ROW 1 COL 1: Title (top-left cell) */}
           <div className={styles.titleCell}>
             <div className={styles.kickerRow}>
               <span className={styles.kickerBar} aria-hidden />
@@ -22,7 +21,7 @@ export default function AboutSection() {
             </h2>
           </div>
 
-          {/* ROW 1 COL 2 */}
+         
           <article className={styles.card}>
             <div className={styles.cardTop}>
               <div className={styles.iconWrap}>
@@ -37,7 +36,7 @@ export default function AboutSection() {
             </p>
           </article>
 
-          {/* ROW 1 COL 3 */}
+       
           <article className={styles.card}>
             <div className={styles.cardTop}>
               <div className={styles.iconWrap}>
@@ -51,7 +50,7 @@ export default function AboutSection() {
             </p>
           </article>
 
-          {/* ROW 2 COL 1 */}
+         
           <article className={styles.card}>
             <div className={styles.cardTop}>
               <div className={styles.iconWrap}>
@@ -65,7 +64,7 @@ export default function AboutSection() {
             </p>
           </article>
 
-          {/* ROW 2 COL 2 */}
+         
           <article className={styles.card}>
             <div className={styles.cardTop}>
               <div className={styles.iconWrap}>
@@ -79,7 +78,7 @@ export default function AboutSection() {
             </p>
           </article>
 
-          {/* ROW 2 COL 3 */}
+         
           <article className={styles.card}>
             <div className={styles.cardTop}>
               <div className={styles.iconWrap}>

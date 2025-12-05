@@ -18,13 +18,13 @@
   background: linear-gradient(90deg, #ffffff 0 var(--split-percent), var(--brand-purple-1) var(--split-percent) 100%);
 }
 
-/* content wrapper: full-width header background, centered content inside */
+
 .headerInner {
   width: 100%;
   height: var(--header-height);
   display: flex;
   align-items: center;
-  padding: 0; /* no outer page margins */
+  padding: 0; 
 }
 
 .content {
@@ -39,7 +39,7 @@
   padding-right: 20px;
 }
 
-/* left */
+
 .left {
   display: flex;
   align-items: center;
@@ -72,15 +72,13 @@
   color: #111827;
 }
 
-/* center nav */
-/* reserve left and right space to avoid overlap with purple panel */
 .centerNav {
   flex: 1 1 auto;
   display: flex;
   gap: 28px;
   align-items: center;
   max-width: calc(100% - var(--left-space) - var(--right-space));
-  min-width: 0; /* allow truncation */
+  min-width: 0; 
 }
 
 .navItem {
@@ -119,7 +117,7 @@
   margin-top: 6px;
 }
 
-/* right actions */
+
 .right {
   display: flex;
   align-items: center;
@@ -150,7 +148,7 @@
   cursor: pointer;
 }
 
-/* hamburger hidden on desktop */
+
 .hamburger {
   display: none;
   background: transparent;
@@ -159,7 +157,7 @@
   margin-left: 6px;
 }
 
-/* mobile menu */
+
 .mobileMenu {
   display: block;
   max-height: 0;
@@ -203,7 +201,7 @@
   margin-top: 6px;
 }
 
-/* responsive breakpoints */
+
 @media (max-width: 1024px) {
   .centerNav {
     display: none;
