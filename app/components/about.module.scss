@@ -1,0 +1,136 @@
+/* REMOVE OUTER BORDER + FULL WIDTH */
+
+.wrapper {
+  width: 100%;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.inner {
+  width: 100%;
+  max-width: 100%; /* Full width */
+  margin: 0 auto;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+/* 3×2 GRID — NO OUTER BORDER */
+.grid3x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0;
+  align-items: start;
+
+  /* REMOVE TOP + LEFT OUTER BORDERS */
+  border: none;
+}
+
+/* Title cell */
+.titleCell {
+  padding: 28px 36px;
+  border-right: 1px solid rgba(16,16,16,0.06);
+  border-bottom: 1px solid rgba(16,16,16,0.06);
+}
+
+/* Cards */
+.card {
+  padding: 28px 36px;
+  border-right: 1px solid rgba(16,16,16,0.06);
+  border-bottom: 1px solid rgba(16,16,16,0.06);
+}
+
+/* Remove right border for last column */
+.grid3x2 > :nth-child(3n) {
+  border-right: none;
+}
+
+/* Remove bottom border for last row */
+.grid3x2 > :nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+/* ICON WRAP */
+.iconWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 10px 24px rgba(16,16,16,0.06),
+    0 0 0 10px rgba(180,150,220,0.03);
+}
+
+.iconWrap img {
+  width: 36px;
+  height: 36px;
+}
+
+/* Card Titles + descriptions */
+.cardTitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cardDesc {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Kicker + heading */
+.kickerRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kickerBar {
+  width: 36px;
+  height: 4px;
+  background: #9b1d3a;
+  border-radius: 3px;
+}
+
+.kickerText {
+  color: #9b1d3a;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* REDUCED FONT SIZE HERE */
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;     /* REDUCED from 40px */
+  line-height: 1.15;
+  margin: 10px 0 0 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid3x2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .titleCell,
+  .card {
+    border-right: none;
+    border-bottom: 1px solid rgba(16,16,16,0.06);
+  }
+
+  .grid3x2 > :last-child {
+    border-bottom: none;
+  }
+
+  .title {
+    font-size: 28px; /* smaller for mobile */
+  }
+}

@@ -1,0 +1,259 @@
+/* footer.module.scss - fixed to prevent overflowing and match reference visuals */
+
+.footer {
+  width: 100%;
+  background: #171717;
+  color: #fff;
+  padding: 56px 0 72px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* center container: left (fixed) | divider (1px) | right (fluid)
+   Reduced left column so right has more breathing room */
+.inner {
+  width: 100%;
+  max-width: 1280px; /* slightly smaller for safer fit */
+  margin: 0 auto;
+  padding: 0 28px; /* reduce horizontal padding */
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 480px 1px minmax(480px, 1fr); /* left | divider | right */
+  gap: 28px;
+  align-items: start;
+}
+
+/* ---------------- LEFT COLUMN ---------------- */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+  margin-left: -12px; /* small shift left if desired */
+}
+
+/* newsletter form wrapper - pill input with attached button */
+.newsForm {
+  position: relative;
+  width: 100%;
+  max-width: 480px; /* match left column width */
+}
+
+/* pill input */
+.emailInput {
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: rgba(255,255,255,0.92);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 8px 20px rgba(0,0,0,0.45);
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* subscribe button attached inside the pill at right */
+.subscribeBtn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+}
+
+/* signup heading */
+.signupTitle {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.15;
+  margin: 6px 0;
+  color: #fff;
+  max-width: 440px;
+}
+
+/* CTA */
+.primaryCTA {
+  display: inline-block;
+  width: 260px;
+  padding: 14px 22px;
+  border-radius: 22px;
+  border: none;
+  background: linear-gradient(90deg,#7a3bff,#a44df5);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 18px 40px rgba(122,59,255,0.18);
+  cursor: pointer;
+}
+
+/* social icons */
+.socialRow {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.socialCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  color: #222;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+}
+
+/* ---------------- DIVIDER ---------------- */
+.divider {
+  width: 1px;
+  background: rgba(255,255,255,0.06);
+  height: 100%;
+  align-self: stretch;
+  justify-self: center;
+}
+
+/* ---------------- RIGHT COLUMN ---------------- */
+.right {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 18px;
+  align-items: start;
+  overflow: hidden; /* protect against overflow */
+}
+
+/* logo + address block at the top-left of right column */
+.logoWrap {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.logo {
+  width: 86px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.address {
+  font-style: normal;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.6;
+  font-size: 13px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* link columns sit below logo — changed to 3 columns to avoid overflow */
+.linkColumns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr)); /* 3 columns */
+  gap: 18px 28px;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+}
+
+/* individual column */
+.col {
+  min-width: 0;
+}
+
+.col h4 {
+  margin: 0 0 10px 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.col li {
+  margin: 8px 0;
+  color: rgba(255,255,255,0.75);
+  font-size: 14px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Make the 'Highlights' copy narrower so it breaks similar to your reference */
+.col.highlight-list {
+  max-width: 260px;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 1100px) {
+  .inner {
+    grid-template-columns: 1fr; /* stack vertically */
+    padding: 0 24px;
+    gap: 28px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .right {
+    grid-template-rows: auto auto;
+  }
+
+  .linkColumns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 18px;
+  }
+
+  .primaryCTA {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .signupTitle {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .emailInput {
+    height: 48px;
+  }
+  .primaryCTA {
+    width: 100%;
+  }
+  .socialCircle {
+    width: 40px;
+    height: 40px;
+  }
+  .signupTitle {
+    font-size: 18px;
+  }
+
+  .linkColumns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Focus styles */
+.emailInput:focus {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45), 0 0 0 3px rgba(122,59,255,0.06) inset;
+  border-color: rgba(255,255,255,0.12);
+}
